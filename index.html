@@ -1,42 +1,21 @@
-<script>
+<head>
+	<link type="text/css" rel="stylesheet" href="clock_assets/flipclock.css" />
+</head>
 
-    CountDownTimer('02/19/2012 10:1 AM', 'countdown');
-    CountDownTimer('02/20/2012 10:1 AM', 'newcountdown');
-
-    function CountDownTimer(dt, id)
-    {
-        var end = new Date(dt);
-
-        var _second = 1000;
-        var _minute = _second * 60;
-        var _hour = _minute * 60;
-        var _day = _hour * 24;
-        var timer;
-
-        function showRemaining() {
-            var now = new Date();
-            var distance = end - now;
-            if (distance < 0) {
-
-                clearInterval(timer);
-                document.getElementById(id).innerHTML = 'EXPIRED!';
-
-                return;
-            }
-            var days = Math.floor(distance / _day);
-            var hours = Math.floor((distance % _day) / _hour);
-            var minutes = Math.floor((distance % _hour) / _minute);
-            var seconds = Math.floor((distance % _minute) / _second);
-
-            document.getElementById(id).innerHTML = days + 'days ';
-            document.getElementById(id).innerHTML += hours + 'hrs ';
-            document.getElementById(id).innerHTML += minutes + 'mins ';
-            document.getElementById(id).innerHTML += seconds + 'secs';
-        }
-
-        timer = setInterval(showRemaining, 1000);
-    }
-
-</script>
-<div id="countdown"></div>
-<div id="newcountdown"></div>
+<body><div class="clock-builder-output"></div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="clock_assets/flipclock.js"></script>
+<style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #CE624F; background-color: #FFC0CB; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #CE624F; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #CE624F; }</style>
+<script type="text/javascript">
+$(function(){
+	FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+	var opts = {
+		clockFace: 'DailyCounter',
+		countdown: true,
+		language: 'Custom'
+	};  
+	var countdown = 1546677000 - ((new Date().getTime())/1000); // from: 01/05/2019 04:30 pm +0800
+	countdown = Math.max(1, countdown);
+	$('.clock-builder-output').FlipClock(countdown, opts);
+});
+</script></body>
