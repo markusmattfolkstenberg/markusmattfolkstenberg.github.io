@@ -1,21 +1,13 @@
-<head>
-	<link type="text/css" rel="stylesheet" href="clock_assets/flipclock.css" />
-</head>
+<html>
 
-<body><div class="clock-builder-output"></div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="clock_assets/flipclock.js"></script>
-<style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #CE624F; background-color: #FFC0CB; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #CE624F; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #CE624F; }</style>
-<script type="text/javascript">
-$(function(){
-	FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
-	var opts = {
-		clockFace: 'DailyCounter',
-		countdown: true,
-		language: 'Custom'
-	};  
-	var countdown = 1546677000 - ((new Date().getTime())/1000); // from: 01/05/2019 04:30 pm +0800
-	countdown = Math.max(1, countdown);
-	$('.clock-builder-output').FlipClock(countdown, opts);
-});
-</script></body>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Video</title>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+
+  <body onLoad="start();">
+    <video id="my-video" src="" controls />
+  </body>
+
+</html>
