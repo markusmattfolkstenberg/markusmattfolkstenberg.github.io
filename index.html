@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <title>My Video</title>
+    <meta property="og:title" content="A video" />
+	<meta property="og:type" content="video.movie" />
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+  		var link = document.createElement('meta');
+  		link.setAttribute('property', 'og:url');
+  		link.content = document.location;
+  		document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
   </head>
 
   <body onLoad="start();">
