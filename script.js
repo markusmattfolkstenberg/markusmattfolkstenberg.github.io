@@ -6,13 +6,12 @@ function setupVideoWithUrls(pAudioUrl, pVideoUrl) {
 
   myMediaSource.addEventListener('sourceopen', function(e) {
 
-
+    var videoSourceBuffer = myMediaSource
+        .addSourceBuffer('video/mp4; codecs="avc1.4d4028"');
     fetch(pVideoUrl).then(function(response) {
-      // The data has to be a JavaScript ArrayBuffer
       return response.arrayBuffer();
     }).then(function(videoData) {
-      var videoSourceBuffer = myMediaSource
-        .addSourceBuffer('video/mp4; codecs="avc1.4d4028"');
+      
       videoSourceBuffer.appendBuffer(videoData);
     });
 
