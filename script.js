@@ -17,10 +17,16 @@ function setupVideoWithUrls(pAudioUrl, pVideoUrl) {
     });
 
     fetch(pAudioUrl).then(function(response) {
-      // The data has to be a JavaScript ArrayBuffer
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
       return response.arrayBuffer();
     }).then(function(audioData) {
+      var audioSourceBuffer = myMediaSource
+        .addSourceBuffer('audio/mp4; codecs="mp4a.40.2"');
       audioSourceBuffer.appendBuffer(audioData);
+    }).catch(function(err) {
+      console.log(err);
     });
   }, false);
 }
