@@ -31,9 +31,7 @@ function setupVideoWithUrls(pAudioUrl, pVideoUrl) {
   }, false);
 }
 
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-  audioUrl = 'https://v.redd.it/kcbky3szpxq21/audio',
-  videoUrl = 'https://v.redd.it/kcbky3szpxq21/DASH_240';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 function fetchRedditData(fromUrl, callback) {
   fetch(fromUrl + '.json').then(function(response) {
