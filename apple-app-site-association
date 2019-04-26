@@ -5,19 +5,19 @@
       {
         "appID": "3DAW4QVV9L.com.nordicchoicehotels.breeze",
         "paths": [
-          "*"
+          "NOT *"
         ]
       },
       {
         "appID": "3DAW4QVV9L.com.nordicchoicehotels.breeze.dev",
         "paths": [
-          "*"
+          "NOT *"
         ]
       },
       {
         "appID": "3DAW4QVV9L.com.nordicchoicehotels.breeze.staging",
         "paths": [
-          "*"
+          "NOT *"
         ]
       }
     ]
